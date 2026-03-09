@@ -44,3 +44,4 @@ function generateQR() {
 </script>
 </body>
 </html>
+<button id="downloadBtn" onclick="downloadQR()">Download QR</button>
