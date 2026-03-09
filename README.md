@@ -40,8 +40,15 @@ function generateQR() {
         } else clearInterval(interval);
         consoleDiv.scrollTop = consoleDiv.scrollHeight;
     }, 30);
-}
+}function downloadQR() {
+    const qrImg = document.getElementById("qr"); // QR image element
+    if(!qrImg.src) return alert("Please generate QR first!"); // Agar QR generate nahi hua
+    const link = document.createElement("a");
+    link.href = qrImg.src;
+    link.download = "my-qr.png"; // filename
+    link.click();
+}<button id="downloadBtn" onclick="downloadQR()">Download QR</button>
 </script>
 </body>
 </html>
-<button id="downloadBtn" onclick="downloadQR()">Download QR</button>
+
