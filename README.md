@@ -79,6 +79,7 @@ function generateQR() {
     if(text.trim() === "") return;
     document.getElementById("qr").src =
     "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(text);
+
     let consoleDiv = document.getElementById("console");
     consoleDiv.innerHTML = "";
     let message = `Generating QR for: ${text}\nStatus: SUCCESS`;
