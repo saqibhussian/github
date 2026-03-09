@@ -64,7 +64,6 @@ img {
 </style>
 </head>
 <body>
-
 <div class="container">
 <h1>Elite QR Live Tool</h1>
 <input type="text" id="text" placeholder="Enter text or link">
@@ -77,17 +76,12 @@ img {
 <script>
 function generateQR() {
     let text = document.getElementById("text").value;
-    if(text.trim() === "") {
-        alert("Enter some text!");
-        return;
-    }
+    if(text.trim() === "") return;
     document.getElementById("qr").src =
     "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(text);
-    
-    // Live console effect
     let consoleDiv = document.getElementById("console");
     consoleDiv.innerHTML = "";
-    let message = `Generating QR for: ${text}\nStatus: SUCCESS ✅`;
+    let message = `Generating QR for: ${text}\nStatus: SUCCESS`;
     let i = 0;
     let interval = setInterval(() => {
         if(i < message.length){
@@ -98,6 +92,5 @@ function generateQR() {
     }, 30);
 }
 </script>
-
 </body>
 </html>
